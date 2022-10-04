@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/svart"
-    tools:context=".resultActivity">
+    android:background="#B285C1"
+    tools:context=".ResultActivity">
 
     <TextView
         android:id="@+id/textViewresult"
@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif-medium"
         android:text="RESULTS"
-        android:textColor="#F6F603"
+        android:textColor="#0A266E"
         android:textSize="60sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -27,7 +27,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="10"
-        android:textColor="#FFEB3B"
+        android:textColor="#002772"
         android:textSize="48sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.467"
@@ -47,24 +47,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewresult"
         app:layout_constraintVertical_bias="0.371" />
-
-    <TextView
-        android:id="@+id/scorekeeper"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginEnd="50dp"
-        android:layout_marginBottom="73dp"
-        android:text="vem"
-        android:textColor="#D1A9A9"
-        android:textSize="48sp"
-        app:layout_constraintBottom_toTopOf="@+id/textViewresult"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.8"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.52" />
 
     <Button
         android:id="@+id/restartButton"

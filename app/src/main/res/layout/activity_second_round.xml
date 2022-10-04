@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/grbla"
-    tools:context=".secondRound">
+    android:background="#AC7FBF"
+    tools:context=".SecondRoundActivity">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/card1"

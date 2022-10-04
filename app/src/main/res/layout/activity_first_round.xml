@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/img_3765"
-    tools:context=".MainActivity">
+    android:background="#9A86B3"
+    tools:context=".FirstRoundActivity">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/kort1"
@@ -113,16 +113,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/kort1"
         app:layout_constraintVertical_bias="0.971" />
-
-    <TextView
-        android:id="@+id/textViewscore"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="#FF00FE"
-        android:textSize="14sp"
-        app:layout_constraintBottom_toTopOf="@+id/kort1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
