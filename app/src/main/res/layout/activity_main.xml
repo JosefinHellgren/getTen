@@ -86,37 +86,40 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="GET TEN"
-        android:textColor="#FFFFFF"
+        android:textColor="#F9F9FA"
         android:textSize="96sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/kort2"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.36"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.669" />
 
     <TextView
         android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="480dp"
+        android:layout_height="89dp"
         android:layout_marginStart="134dp"
         android:layout_marginTop="68dp"
         android:layout_marginEnd="219dp"
         android:layout_marginBottom="146dp"
         android:text="..or try again"
         android:textColor="#FFFFFF"
-        android:textSize="34sp"
+        android:textSize="60sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.635"
+        app:layout_constraintHorizontal_bias="0.286"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/kort1"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.971" />
 
     <TextView
         android:id="@+id/textViewscore"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView"
+        android:textColor="#FF00FE"
+        android:textSize="14sp"
         app:layout_constraintBottom_toTopOf="@+id/kort1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

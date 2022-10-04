@@ -13,8 +13,7 @@ class MainActivity : AppCompatActivity() {
     lateinit var interactiveCard1: CardView
     lateinit var interactiveCard2: CardView
     lateinit var textViewScore: TextView
-
-
+    lateinit var textView: TextView
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -25,13 +24,19 @@ class MainActivity : AppCompatActivity() {
         cardContentLeft = findViewById(R.id.cardContentLeft)
         cardContentRight = findViewById(R.id.cardContentRight)
         textViewScore = findViewById(R.id.textViewscore)
+        textView = findViewById<TextView>(R.id.textView2)
         /*buttonLeft = findViewById(R.id.choiceButtonLeft)
         buttonRight = findViewById(R.id.choiceButtonRight)*/
         val mIntent = intent
-        val turns = intent.getSerializableExtra("TURNS")
-        val whooseTurn = intent.getSerializableExtra("WHOOSE_TURN")
+        var numberOfPLayers =intent.getIntExtra("NR_OF_PLAYERS",0)
+        var playersTurn = intent.getIntExtra("PLAYERS_TURN",0)
+        var player1Score =intent.getIntExtra("PLAYER_1_SCORE",0)
+        var player2Score = intent.getIntExtra("PLAYER_2_SCORE",0)
+        var rounds =intent.getIntExtra("NR_OF_ROUNDS",0)
 
 
+
+        textView.text="Player: $playersTurn"
         var rightCard = CardDeck.drawCard()
         var leftCard = CardDeck.drawCard()
         cardContentLeft.text = "${leftCard.value}"
@@ -40,6 +45,12 @@ class MainActivity : AppCompatActivity() {
         interactiveCard1.setOnClickListener {
             val intent = Intent(this, secondRound::class.java)
             intent.putExtra("CARD", leftCard)
+            intent.putExtra("NR_OF_PLAYERS",numberOfPLayers)
+            intent.putExtra("PLAYERS_TURN",playersTurn)
+            intent.putExtra("PLAYER_1_SCORE",player1Score)
+            intent.putExtra("PLAYER_2_SCORE",player2Score)
+            intent.putExtra("NR_OF_ROUNDS", rounds)
+
 
             startActivity(intent)
         }
@@ -47,29 +58,29 @@ class MainActivity : AppCompatActivity() {
         interactiveCard2.setOnClickListener {
             val intent = Intent(this, secondRound::class.java)
             intent.putExtra("CARD", rightCard)
+            intent.putExtra("NR_OF_PLAYERS",numberOfPLayers)
+            intent.putExtra("PLAYERS_TURN",playersTurn)
+            intent.putExtra("PLAYER_1_SCORE",player1Score)
+            intent.putExtra("PLAYER_2_SCORE",player2Score)
+
 
             startActivity(intent)
         }
     }
-
 }
 
 class Card(var value: Int) : Serializable
 
 object CardDeck {
-    var cards = mutableListOf<Card>()
-    fun drawCard(): Card{
+    fun drawCard(): Card {
+        var value = (1..9).random()
+        var card = Card(value)
 
-        return cards.removeAt(0)
+        return card
     }
-    init{
 
-        for (i in (1..100)) {
-            var value = (1..9).random()
-            var card = Card(value)
-            CardDeck.cards.add(card)
-        }
-    }
+
+
 
 }
 

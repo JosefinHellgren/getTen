@@ -28,34 +28,32 @@ class secondRound : AppCompatActivity() {
         var cardView1 = findViewById<CardView>(R.id.card1)
         var cardView2 = findViewById<CardView>(R.id.card2)
         var cardView3 = findViewById<CardView>(R.id.card3)
-
-
-/*
-        var score = 0
-        var sumOfCards = 0
-        textViewScore.text = "current score: $score"
-        textViewSumOfCards.text = "The sum of your card is: $sumOfCards"*/
-        //get the sent cards
-
         val mIntent = intent
         val chosenCard = intent.getSerializableExtra("CARD") as Card
+       var nrOfPlayers = intent.getIntExtra("NR_OF_PLAYERS",0)
+        var playersTurn =intent.getIntExtra("PLAYERS_TURN",0)
+        var player1Score = intent.getIntExtra("PLAYER_1_SCORE",0)
+        var player2Score = intent.getIntExtra("PLAYER_2_SCORE",0)
+        var rounds = intent.getIntExtra("NR_OF_ROUNDS",0)
 
         var cardOne = CardDeck.drawCard()
         var cardTwo = CardDeck.drawCard()
         var cardThree = CardDeck.drawCard()
         cardFromActivityOne.text = "${chosenCard.value}"
 
-
-        //how to not have to manually put in the index of the cardDeck
         cardOneContent.text = "${cardOne.value}"
         cardContentTwo.text = "${cardTwo.value}"
         cardThreeContent.text = "${cardThree.value}"
-
 
         cardView1.setOnClickListener() {
             val intent = Intent(this, thirdRound::class.java)
             intent.putExtra("CARD", cardOne)
             intent.putExtra("FirstSavedCard", chosenCard)
+           intent.putExtra("NR_OF_PLAYERS",nrOfPlayers)
+            intent.putExtra("PLAYERS_TURN",playersTurn)
+            intent.putExtra("PLAYER_1_SCORE",player1Score)
+            intent.putExtra("PLAYER_2_SCORE",player2Score)
+            intent.putExtra("NR_OF_ROUNDS", rounds)
 
             startActivity(intent)
 
@@ -65,6 +63,11 @@ class secondRound : AppCompatActivity() {
             val intent = Intent(this, thirdRound::class.java)
             intent.putExtra("CARD", cardTwo)
             intent.putExtra("FirstSavedCard", chosenCard)
+            intent.putExtra("NR_OF_PLAYERS",nrOfPlayers)
+            intent.putExtra("PLAYERS_TURN",playersTurn)
+            intent.putExtra("PLAYER_1_SCORE",player1Score)
+            intent.putExtra("PLAYER_2_SCORE",player2Score)
+            intent.putExtra("NR_OF_ROUNDS", rounds)
 
             startActivity(intent)
 
@@ -74,6 +77,11 @@ class secondRound : AppCompatActivity() {
             val intent = Intent(this, thirdRound::class.java)
             intent.putExtra("CARD", cardThree)
             intent.putExtra("FirstSavedCard", chosenCard)
+            intent.putExtra("NR_OF_PLAYERS",nrOfPlayers)
+            intent.putExtra("PLAYERS_TURN",playersTurn)
+            intent.putExtra("PLAYER_1_SCORE",player1Score)
+            intent.putExtra("PLAYER_2_SCORE",player2Score)
+            intent.putExtra("NR_OF_ROUNDS", rounds)
 
             startActivity(intent)
         }
