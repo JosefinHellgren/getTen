@@ -3,6 +3,7 @@ package com.example.getten
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.cardview.widget.CardView
@@ -53,7 +54,14 @@ class ThirdRoundActivity : AppCompatActivity() {
         textView5.text = "${chosenCard2?.value}"
         textView6.text = "${chosenCard1?.value}"
 
+        var sum =chosenCard1!!.value+chosenCard2!!.value
+        Log.d("ThirdRoundActivity","what is the value of $sum")
+        if (sum>=10){
+            operatorImageView.setImageResource(R.drawable.minus)
+        }else{
+            operatorImageView.setImageResource(R.drawable.plusiconblack2)
 
+        }
 
 
         cardView1.setOnClickListener() {

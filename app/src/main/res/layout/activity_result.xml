@@ -13,21 +13,22 @@
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif-medium"
         android:text="RESULTS"
-        android:textColor="#0A266E"
+        android:textColor="#EAECF1"
         android:textSize="60sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.318"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.139" />
+        app:layout_constraintVertical_bias="0.388" />
 
     <TextView
         android:id="@+id/score"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="10"
-        android:textColor="#002772"
+        android:textColor="#F5F5F6"
         android:textSize="48sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.467"
@@ -38,33 +39,41 @@
         android:id="@+id/buttonPlay"
         android:layout_width="102dp"
         android:layout_height="97dp"
-        android:text="play"
+        android:text="next player"
         android:textColorHighlight="#A2D9C2"
         android:textColorLink="#96CDB6"
         app:cornerRadius="150dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewresult"
-        app:layout_constraintVertical_bias="0.371" />
+        app:layout_constraintVertical_bias="0.259" />
 
     <Button
         android:id="@+id/restartButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="160dp"
-        android:layout_marginTop="41dp"
         android:layout_marginEnd="157dp"
-        android:layout_marginBottom="202dp"
-        android:text="restart"
+        android:layout_marginBottom="164dp"
+        android:text="start"
         android:textColorHighlight="#9CD1BD"
         app:cornerRadius="150dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.571"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonPlay"
-        app:layout_constraintVertical_bias="1.0"
         app:rippleColor="#9CCFB8" />
+
+    <ImageView
+        android:id="@+id/totoroWinimageView"
+        android:layout_width="212dp"
+        android:layout_height="266dp"
+        app:layout_constraintBottom_toTopOf="@+id/textViewresult"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/totoroovinn" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

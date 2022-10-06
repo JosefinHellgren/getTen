@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.TextView
 
 class ResultActivity : AppCompatActivity() {
@@ -21,6 +22,7 @@ class ResultActivity : AppCompatActivity() {
         textview1 = findViewById(R.id.score)
         var buttonPlay = findViewById<Button>(R.id.buttonPlay)
         var buttonRestart = findViewById<Button>(R.id.restartButton)
+        var resultImageView =findViewById<ImageView>(R.id.totoroWinimageView)
         val mIntent = intent
         val chosenCard1 = intent.getSerializableExtra("CARD_1") as Card
         val chosenCard2 = intent.getSerializableExtra("CARD_2") as Card
@@ -31,13 +33,8 @@ class ResultActivity : AppCompatActivity() {
         var player2Score = intent.getIntExtra("PLAYER_2_SCORE", 0)
         var rounds = intent.getIntExtra("NR_OF_ROUNDS", 0)
         var sumOfSecondRounds = intent.getIntExtra("SUM_OF_SECOND_ROUNDS", 0)
-
         rounds++
-
-        //känns som att ifall jag kunde ta med korten 1 och 2 så vore det sum3
-        //och isåfall kunde jag kolla if(sum3==10 || sum==10)
-
-       var  sum = chosenCard1.value + chosenCard2.value
+        var  sum = chosenCard1.value + chosenCard2.value
 
         if (chosenCard3 != null) {
             if (sum >= 10) {
@@ -46,9 +43,7 @@ class ResultActivity : AppCompatActivity() {
                 sum += chosenCard3.value
             }
         }
-        //adds to the playersscore if reached 10
-        //and tells the user if they reached ten or not
-        //här skulle jag vilja kunna skriva if(sum3==10||sum==10)
+
         if (sum == 10) {
             if (playersTurn == 1) {
                 player1Score++
@@ -59,10 +54,12 @@ class ResultActivity : AppCompatActivity() {
             }
 
             textview1.text = "You got ${sum} good job!"
+            resultImageView.setImageResource(R.drawable.totoroleaf)
 
 
         } else {
             textview1.text = "you got ${sum},not 10."
+            resultImageView.setImageResource(R.drawable.tototonowin)
 
         }
 
@@ -70,21 +67,28 @@ class ResultActivity : AppCompatActivity() {
 
 
             if (player2Score > player1Score) {
-                textView.text = "Winner: Player 2"
-
+                textView.text = "Player 2"
+                textview1.text ="your the winner"
+            resultImageView.setImageResource(R.drawable.totoroovinn)
 
             } else if (player1Score > player2Score) {
-                textView.text = "Winner: Player 1"
+                textView.text = "Player 1 "
+                textview1.text = "your the winner"
+                resultImageView.setImageResource(R.drawable.totoroovinn)
 
+            } else if(player1Score==1&&player2Score==1) {
+                textView.text = "WIN WIN"
+                textview1.text="both of you"
+                resultImageView.setImageResource(R.drawable.totoroovinn)
 
-            } else {
-                textView.text = "win n loose"
-
-
+            }else{
+                textView.text="LOSE LOSE"
+                textview1.text="both of you"
+                resultImageView.setImageResource(R.drawable.tototonowin)
             }
 
         }
-        Log.d("resultActivity", "nr of Players: $nrOfPlayers")
+
         if (nrOfPlayers == 2 && rounds<2) {
             buttonPlay.visibility = View.VISIBLE
 
@@ -92,12 +96,7 @@ class ResultActivity : AppCompatActivity() {
             buttonPlay.visibility = View.GONE
 
         }
-        Log.i("resultActivity", "playerOneScore:$player1Score")
-        Log.i("resultActivity", "playertwoScore:$player2Score")
-        Log.i("resultActivity", "roundsCount:$rounds")
-        //when clicking the playbutton players turn changes to the other player
-        //here i want to count the rounds so i can stop the game at x amount of rounds in the if
-        //statement higher up
+
         buttonPlay.setOnClickListener()
         {
 

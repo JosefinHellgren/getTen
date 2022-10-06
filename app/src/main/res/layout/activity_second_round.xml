@@ -149,6 +149,7 @@
                 android:id="@+id/CardFromActivityOne"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="#03A9F4"
                 android:textSize="96sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -156,5 +157,18 @@
                 app:layout_constraintTop_toTopOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/GetTenTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="GET TEN"
+        android:textColor="#FFFFFF"
+        android:textSize="60sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/card2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -14,6 +14,7 @@ class SecondRoundActivity : AppCompatActivity() {
     lateinit var card1: CardView
     lateinit var card2: CardView
     lateinit var card3: CardView
+    lateinit var getTenTextView: TextView
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -23,6 +24,7 @@ class SecondRoundActivity : AppCompatActivity() {
         cardContentTwo = findViewById(R.id.cardTwoContent)
         cardThreeContent = findViewById(R.id.cardThreeContent)
         cardFromActivityOne = findViewById(R.id.CardFromActivityOne)
+        getTenTextView = findViewById(R.id.GetTenTextView)
         var cardView1 = findViewById<CardView>(R.id.card1)
         var cardView2 = findViewById<CardView>(R.id.card2)
         var cardView3 = findViewById<CardView>(R.id.card3)
@@ -40,16 +42,14 @@ class SecondRoundActivity : AppCompatActivity() {
         cardOneContent.text = "${cardOne.value}"
         cardContentTwo.text = "${cardTwo.value}"
         cardThreeContent.text = "${cardThree.value}"
-
         var sum3 = cardThree.value + chosenCard1.value
         var sum2 = cardTwo.value + chosenCard1.value
         var sum1 = cardOne.value + chosenCard1.value
 
         cardView1.setOnClickListener() {
             if (sum1 == 10) {
-                //när jag skickar med korten som finns här blir det crash
                 val intent = Intent(this, ResultActivity::class.java)
-                intent.putExtra("SUM_OF_SECOND_ROUNDS",sum1)
+                intent.putExtra("SUM_OF_SECOND_ROUNDS", sum1)
                 intent.putExtra("NR_OF_PLAYERS", nrOfPlayers)
                 intent.putExtra("NR_OF_ROUNDS", rounds)
                 intent.putExtra("PLAYER_1_SCORE", player1Score)
@@ -76,13 +76,10 @@ class SecondRoundActivity : AppCompatActivity() {
             }
         }
 
-
-
-
         cardView2.setOnClickListener() {
             if (sum2 == 10) {
                 val intent = Intent(this, ResultActivity::class.java)
-                intent.putExtra("SUM_OF_SECOND_ROUND",sum2)
+                intent.putExtra("SUM_OF_SECOND_ROUND", sum2)
                 intent.putExtra("NR_OF_PLAYERS", nrOfPlayers)
                 intent.putExtra("NR_OF_ROUNDS", rounds)
                 intent.putExtra("PLAYER_1_SCORE", player1Score)
@@ -107,11 +104,10 @@ class SecondRoundActivity : AppCompatActivity() {
             }
         }
 
-
         cardView3.setOnClickListener() {
             if (sum3 == 10) {
                 val intent = Intent(this, ResultActivity::class.java)
-                intent.putExtra("SUM_OF_SECOND_ROUND",sum3)
+                intent.putExtra("SUM_OF_SECOND_ROUND", sum3)
                 intent.putExtra("NR_OF_PLAYERS", nrOfPlayers)
                 intent.putExtra("NR_OF_ROUNDS", rounds)
                 intent.putExtra("PLAYER_1_SCORE", player1Score)

@@ -35,7 +35,7 @@ class FirstRoundActivity : AppCompatActivity() {
 
 
 
-        textView.text = "Player: $playersTurn"
+        textView.text = "Your turn P$playersTurn"
         var rightCard = CardDeck.drawCard()
         var leftCard = CardDeck.drawCard()
         cardleftTextView.text = "${leftCard.value}"
